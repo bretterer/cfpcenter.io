@@ -23,6 +23,12 @@ class ConferenceTest extends TestCase
         $this->conference = factory('App\Models\Conference')->create();
     }
 
+    public function testDatabaseHasConferenceId()
+    {
+        $this->assertDatabaseHas('conferences', ['id' => $this->conference->getId()]);
+        $this->assertTrue(is_int($this->conference->getId()));
+    }
+
     public function testDatabaseHasConferenceName()
     {
         $this->assertDatabaseHas('conferences', ['name' => $this->conference->getName()]);

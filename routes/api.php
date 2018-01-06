@@ -18,10 +18,10 @@ use Illuminate\Http\Request;
  */
 
 Route::get('conferences', ['uses' => 'Api\ConferencesController@index']);
-Route::get('conferences/{id}', ['uses' => 'Api\ConferencesController@fetch'])->where('[0-9]+');
+Route::get('conferences/{id}', ['uses' => 'Api\ConferencesController@fetch']);
 Route::post('conferences', ['uses' => 'Api\ConferencesController@create']);
-Route::put('conferences/{id}', ['uses' => 'Api\ConferencesController@edit'])->where('[0-9]+');
-Route::delete('conferences/{id}', ['uses' => 'Api\ConferencesController@delete'])->where('[0-9]+');
+Route::put('conferences', ['uses' => 'Api\ConferencesController@edit']);
+Route::delete('conferences/{id}', ['uses' => 'Api\ConferencesController@delete']);
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
