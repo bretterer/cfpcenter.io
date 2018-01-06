@@ -18,7 +18,7 @@ class CreateSubmissionTable extends Migration
             $table->integer('user_id');
             $table->integer('conference_id');
             $table->string('talk_title');
-            $table->string('talk_length');
+            $table->integer('talk_length');
             $table->string('talk_level');
             $table->string('joindin_link');
             $table->string('labels');

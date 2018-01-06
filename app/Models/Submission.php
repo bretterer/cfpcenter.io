@@ -13,7 +13,7 @@ class Submission extends Model
 
     public function user() : BelongsTo
     {
-        return $this->belongsTo(User::class, 'id', 'user_id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function scopeByConferenceId(Builder $query, int $conferenceId)
@@ -24,5 +24,40 @@ class Submission extends Model
     public function scopeByUser(Builder $query, int $userId)
     {
         return $query->where('user_id', '=', $userId);
+    }
+
+    public function getTalkTitle() : string
+    {
+        return $this->talk_title;
+    }
+
+    public function getUserId() : int
+    {
+        return $this->user_id;
+    }
+
+    public function getConferenceId() : int
+    {
+        return $this->conference_id;
+    }
+
+    public function getTalkLength() : int
+    {
+        return $this->talk_length;
+    }
+
+    public function getTalkLevel() : string
+    {
+        return $this->talk_level;
+    }
+
+    public function getTalkLabels() : string
+    {
+        return $this->labels;
+    }
+
+    public function getJoindinLink()
+    {
+        return $this->joindin_link;
     }
 }
