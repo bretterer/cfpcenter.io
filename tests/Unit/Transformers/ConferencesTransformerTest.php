@@ -10,6 +10,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ConferencesTransformerTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * @var Conference
      */

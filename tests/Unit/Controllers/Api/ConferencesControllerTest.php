@@ -11,6 +11,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ConferencesControllerTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * @var ConferencesController
      */
