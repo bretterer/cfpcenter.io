@@ -16,6 +16,8 @@ class ConferenceTransformer extends TransformerAbstract
         return [
             'id'        => $conference->getId(),
             'name'      => $conference->getName(),
+            'confDate'  => $conference->getConfDate(),
+            'cfpDate'   => $conference->getCfpDate(),
             'city'      => $conference->getCity(),
             'state'     => $conference->getState(),
             'country'   => $conference->getCountry(),

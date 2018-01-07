@@ -30,6 +30,16 @@ class Conference extends Model
         return $this->name;
     }
 
+    public function getConfDate() : string
+    {
+        return $this->conf_date;
+    }
+
+    public function getCfpDate() : string
+    {
+        return $this->cfp_date;
+    }
+
     public function getCity() : string
     {
         return $this->city;
@@ -78,6 +88,16 @@ class Conference extends Model
     public function setName(string $name)
     {
         $this->name = $name;
+    }
+
+    public function setConfDate(string $date)
+    {
+        $this->conf_date = $date;
+    }
+
+    public function setCfpDate(string $date)
+    {
+        $this->cfp_date = $date;
     }
 
     public function setCity(string $city)

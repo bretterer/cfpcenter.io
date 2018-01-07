@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Api;
 
+use Carbon\Carbon;
 use Faker\Factory;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -38,6 +39,8 @@ class ConferencesControllerTest extends TestCase
 
         $response = $this->post('/api/conferences', [
             'name' => ucfirst($faker->word) . ' PHP Conference',
+            'confDate' => $faker->date(),
+            'cfpDate' => $faker->date(),
             'city' => $faker->city,
             'state' => $faker->state,
             'country' => $faker->country,

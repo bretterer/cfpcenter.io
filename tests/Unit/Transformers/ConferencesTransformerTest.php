@@ -32,7 +32,10 @@ class ConferencesTransformerTest extends TestCase
         $this->conference = factory('App\Models\Conference')->create();
 
         $this->testData = [
+            'id' => $this->conference->getId(),
             'name' => $this->conference->getName(),
+            'confDate' => $this->conference->getConfDate(),
+            'cfpDate' => $this->conference->getCfpDate(),
             'city' => $this->conference->getCity(),
             'state' => $this->conference->getState(),
             'country' => $this->conference->getCountry(),
@@ -56,6 +59,8 @@ class ConferencesTransformerTest extends TestCase
         $data = $this->transformer->transform($this->conference);
 
         $this->assertArrayHasKey('name', $data);
+        $this->assertArrayHasKey('confDate', $data);
+        $this->assertArrayHasKey('cfpDate', $data);
         $this->assertArrayHasKey('city', $data);
         $this->assertArrayHasKey('state', $data);
         $this->assertArrayHasKey('country', $data);

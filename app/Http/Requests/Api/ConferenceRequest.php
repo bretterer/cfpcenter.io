@@ -26,6 +26,16 @@ class ConferenceRequest extends FormRequest
         return $this->get('name');
     }
 
+    public function getConfDate()
+    {
+        return $this->get('confDate');
+    }
+
+    public function getCfpDate()
+    {
+        return $this->get('cfpDate');
+    }
+
     public function getCity()
     {
         return $this->get('city');
