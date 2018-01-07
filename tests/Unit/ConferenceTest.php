@@ -9,8 +9,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ConferenceTest extends TestCase
 {
-    use RefreshDatabase;
-
     /**
      * @var Conference
      */

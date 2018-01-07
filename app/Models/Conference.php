@@ -15,6 +15,11 @@ class Conference extends Model
         return $this->hasMany(Submission::class, 'conference_id', 'id');
     }
 
+    public function tags() : HasMany
+    {
+        return $this->hasMany(Tag::class, 'conference_id', 'id');
+    }
+
     public function getId() : int
     {
         return $this->id;

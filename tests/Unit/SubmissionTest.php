@@ -9,8 +9,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class SubmissionTest extends TestCase
 {
-    use RefreshDatabase;
-
     /**
      * @var Submission
      */

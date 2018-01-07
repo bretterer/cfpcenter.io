@@ -33,7 +33,7 @@ class ConferencesController extends Controller
 
         return $this->response
             ->setStatusCode(200)
-            ->setContent(fractal($conferences)->transformWith($this->transformer)->toArray());
+            ->setContent(fractal($conferences)->transformWith($this->transformer)->includeTags()->toArray());
     }
 
     public function fetch(Request $request) : Response

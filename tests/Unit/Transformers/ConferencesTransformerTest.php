@@ -39,6 +39,7 @@ class ConferencesTransformerTest extends TestCase
             'coc' => $this->conference->getCoc(),
             'cocLink' => $this->conference->getCocLink(),
             'website' => $this->conference->getWebsite(),
+            'about' => $this->conference->getAbout(),
             'image' => $this->conference->getImage(),
         ];
 
@@ -61,6 +62,7 @@ class ConferencesTransformerTest extends TestCase
         $this->assertArrayHasKey('coc', $data);
         $this->assertArrayHasKey('cocLink', $data);
         $this->assertArrayHasKey('website', $data);
+        $this->assertArrayHasKey('about', $data);
         $this->assertArrayHasKey('image', $data);
     }
 }
