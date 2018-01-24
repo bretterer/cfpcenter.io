@@ -15,6 +15,11 @@ class Conference extends Model
         return $this->hasMany(Submission::class, 'conference_id', 'id');
     }
 
+    public function tags() : HasMany
+    {
+        return $this->hasMany(Tag::class, 'conference_id', 'id');
+    }
+
     public function getId() : int
     {
         return $this->id;
@@ -23,6 +28,16 @@ class Conference extends Model
     public function getName() : string
     {
         return $this->name;
+    }
+
+    public function getConfDate() : string
+    {
+        return $this->conf_date;
+    }
+
+    public function getCfpDate() : string
+    {
+        return $this->cfp_date;
     }
 
     public function getCity() : string
@@ -73,6 +88,16 @@ class Conference extends Model
     public function setName(string $name)
     {
         $this->name = $name;
+    }
+
+    public function setConfDate(string $date)
+    {
+        $this->conf_date = $date;
+    }
+
+    public function setCfpDate(string $date)
+    {
+        $this->cfp_date = $date;
     }
 
     public function setCity(string $city)

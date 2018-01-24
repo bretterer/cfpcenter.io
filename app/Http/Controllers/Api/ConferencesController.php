@@ -33,7 +33,7 @@ class ConferencesController extends Controller
 
         return $this->response
             ->setStatusCode(200)
-            ->setContent(fractal($conferences)->transformWith($this->transformer)->toArray());
+            ->setContent(fractal($conferences)->transformWith($this->transformer)->includeTags()->toArray());
     }
 
     public function fetch(Request $request) : Response
@@ -50,6 +50,8 @@ class ConferencesController extends Controller
         $conference = new Conference();
 
         $conference->setName($request->getName());
+        $conference->setConfDate($request->getConfDate());
+        $conference->setCfpDate($request->getCfpDate());
         $conference->setCity($request->getCity());
         $conference->setState($request->getState());
         $conference->setCountry($request->getCountry());
@@ -69,6 +71,8 @@ class ConferencesController extends Controller
         $conference = Conference::byConferenceId($request->getId())->get();
 
         $conference->setName($request->getName());
+        $conference->setConfDate($request->getConfDate());
+        $conference->setCfpDate($request->getCfpDate());
         $conference->setCity($request->getCity());
         $conference->setState($request->getState());
         $conference->setCountry($request->getCountry());

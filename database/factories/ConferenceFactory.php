@@ -8,6 +8,8 @@ $factory->define(App\Models\Conference::class, function (Faker $faker) {
 
     return [
         'name' => $faker->word . ' PHP Conference',
+        'conf_date' => $faker->date(),
+        'cfp_date' => $faker->date(),
         'city' => $faker->city,
         'state' => $faker->stateAbbr,
         'country' => $faker->country,

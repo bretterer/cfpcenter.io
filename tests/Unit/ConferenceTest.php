@@ -9,8 +9,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ConferenceTest extends TestCase
 {
-    use RefreshDatabase;
-
     /**
      * @var Conference
      */
@@ -33,6 +31,18 @@ class ConferenceTest extends TestCase
     {
         $this->assertDatabaseHas('conferences', ['name' => $this->conference->getName()]);
         $this->assertTrue(is_string($this->conference->getName()));
+    }
+
+    public function testDatabaseHasConfDate()
+    {
+        $this->assertDatabaseHas('conferences', ['conf_date' => $this->conference->getConfDate()]);
+        $this->assertTrue(is_string($this->conference->getConfDate()));
+    }
+
+    public function testDatabaseHasCfpDate()
+    {
+        $this->assertDatabaseHas('conferences', ['cfp_date' => $this->conference->getCfpDate()]);
+        $this->assertTrue(is_string($this->conference->getCfpDate()));
     }
 
     public function testDatabaseHasConferenceCity()
