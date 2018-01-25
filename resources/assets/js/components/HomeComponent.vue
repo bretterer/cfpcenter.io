@@ -21,11 +21,13 @@
                 </div>
             </div>
         </div>
+        <footer></footer>
     </div>
 </template>
 <script>
   import axios from 'axios';
   import Navbar from './NavComponent.vue';
+  import Footer from './FooterComponent.vue';
 
   export default {
     data() {
